@@ -1,0 +1,16 @@
+
+.botonSumar{
+    width: 30px;
+    height: 30px;
+    background-color: palegreen;
+    border-color: rgb(51, 183, 51);
+    border-radius: 30px;
+}
+
+.botonRestar{
+    width: 30px;
+    height: 30px;
+    background-color: salmon;
+    border-color: rgb(210, 117, 101);
+    border-radius: 30px;
+}
