@@ -1,18 +1,17 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Counter from './Counter'
 
 const AllCounter = () => {
 
-    const [calculoContador, setCalculoContador] = useState(0)
+    const [allCounter, setAllCounter] = useState([])
 
     
   return (
     <>
-    {calculoContador}
+    {allCounter}
 
-    <Counter calculoContador={calculoContador} setCalculoContador={setCalculoContador}></Counter>
+    <Counter setAllCounter={setAllCounter}></Counter>
     <br></br>
-    <Counter calculoContador={calculoContador} setCalculoContador={setCalculoContador}></Counter>
     </>
   )
 }
