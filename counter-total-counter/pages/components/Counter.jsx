@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import estiloCSS from '@/pages/components/Counter.module.css'
 
 const Counter = () => {
 
@@ -8,8 +9,10 @@ const Counter = () => {
   return (
     <>
     {calculoContador}
-    <button onClick={()=>{setCalculoContador(calculoContador + 1)}}>+</button>
-    <button onClick={()=>{setCalculoContador(calculoContador - 1)}}>-</button>
+    <button onClick={()=>{setCalculoContador(calculoContador + 1)}}
+        className={estiloCSS.botonSumar}>+</button>
+    <button onClick={()=>{setCalculoContador(calculoContador - 1)}}
+        className={estiloCSS.botonRestar}>-</button>
     </>
   )
 }
