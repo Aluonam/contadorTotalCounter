@@ -15,9 +15,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main}`}>
-      {/* <AllCounter></AllCounter> */}
+      <AllCounter></AllCounter>
 
-      <Reloj></Reloj>
+      {/* <Reloj></Reloj> */}
       </main>
     </>
   )

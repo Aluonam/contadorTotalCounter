@@ -5,12 +5,15 @@ const Reloj = () => {
 
     const [hora, setHora] = useState()
 
+    const [horaMasDiez, setHoraMasDiez] = useState([])
+
     useEffect(() => {
       const interval = setInterval(() => {
         const fecha = new Date();
-       
-        const hora10 = fecha.getMinutes() + 5
+        const hora10 = fecha.getMinutes() + 10;
+
         console.log(hora10)
+     
 
       }, 1000)
 
@@ -22,6 +25,7 @@ const Reloj = () => {
   return (
     <>
     {hora}
+    {horaMasDiez}
     </>
   )
 }
