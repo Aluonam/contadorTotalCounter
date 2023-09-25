@@ -1,18 +1,34 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Counter from './Counter'
 
 const AllCounter = () => {
 
-    const [calculoContador, setCalculoContador] = useState(0)
+    const [allCounter, setAllCounter] = useState([])
+    const [sumaAllCounter, setSumaAllCounter] = useState(0)
 
+    const showCounters = (num) => {
+        const newArr = new Array(num);
+        newArr.fill(0);
+        return(
+            newArr.map((actualElement, index)=>{
+                return(
+                    <Counter allCounter={allCounter} setAllCounter={setAllCounter} index={index}></Counter>
+                )
+            })
+        )
+    }
+
+    useEffect(() => {
+      setSumaAllCounter(allCounter.reduce((acumulativo,actual)=>acumulativo + actual, 0))
+    }, [allCounter])
     
   return (
     <>
-    {calculoContador}
-
-    <Counter calculoContador={calculoContador} setCalculoContador={setCalculoContador}></Counter>
+    {sumaAllCounter}
     <br></br>
-    <Counter calculoContador={calculoContador} setCalculoContador={setCalculoContador}></Counter>
+
+    {showCounters(4)}
+    <br></br>
     </>
   )
 }

@@ -1,17 +1,31 @@
 import React, {useState} from 'react'
 import estiloCSS from '@/pages/components/Counter.module.css'
 
-const Counter = ({calculoContador,setCalculoContador}) => {
+const Counter = ({allCounter, setAllCounter, index}) => {
 
-    
 
+    const [calculoContador, setCalculoContador] = useState(0)
+
+
+    const sumar = ()=>{
+        setCalculoContador(calculoContador + 1)
+        const copyAll = structuredClone(allCounter)
+        copyAll[index] = calculoContador + 1;
+        setAllCounter(copyAll)
+    }
+    const restar = ()=>{
+        setCalculoContador(calculoContador - 1)
+        const copyAll = structuredClone(allCounter)
+        copyAll[index] = calculoContador - 1;
+        setAllCounter(copyAll)
+    }
 
   return (
     <>
-    
-    <button onClick={()=>{setCalculoContador(calculoContador + 1)}}
+    {calculoContador}
+    <button onClick={()=>{sumar()}}
         className={estiloCSS.botonSumar}>+</button>
-    <button onClick={()=>{setCalculoContador(calculoContador - 1)}}
+    <button onClick={()=>{restar()}}
         className={estiloCSS.botonRestar}>-</button>
     </>
   )
